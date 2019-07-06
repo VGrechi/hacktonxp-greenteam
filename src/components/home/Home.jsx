@@ -16,7 +16,6 @@ const styles = {
         bottom: 0,
         width: '100%',
         display: 'flex',
-        backgroundColor: '#ddd',
         color: 'white'
     },
     tab: {

@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import Topbar from '../topbar/Topbar';
 import { Bar, Line, Pie } from "react-chartjs-2";
-import { Typography } from '@material-ui/core';
+import { Button, Typography, Card, CardContent } from '@material-ui/core';
 
 export default class Simulator extends Component {
 
@@ -100,32 +100,59 @@ export default class Simulator extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <Typography>Indicador Poupança X CDI</Typography>
-                        <div className="chart">
-                            <Line
-                                data={this.state.chartData}
-                                options={{
-                                    maintainAspectRatio: false
-                                }}
-                            />
-                        </div>
+                        <Card>
+                            <CardContent>
+                            <Typography>Indicador Poupança X CDI</Typography>
+                            <div className="chart">
+                                <Line
+                                    data={this.state.chartData}
+                                    options={{
+                                        maintainAspectRatio: false
+                                    }}
+                                />
+                            </div>
+                            </CardContent>
+                        </Card>
 
-                        <Typography>Indicador ROI</Typography>
-                        <div className="chart">
-                            <Bar
-                                data={this.state.barData}
-                                options={{ maintainAspectRatio: false }}
-                            />
-                        </div>
+                        <Card style={{marginTop: '1em'}}>
+                            <CardContent>
+                            <Typography>Indicador ROI</Typography>
+                            <div className="chart">
+                                <Bar
+                                    data={this.state.barData}
+                                    options={{ maintainAspectRatio: false }}
+                                />
+                            </div>
+                            </CardContent>
+                        </Card>
                     </Col>
                     <Col>
-                        <Typography>Sua Carteira</Typography>
-                        <div className="chart">
-                            <Pie
-                                data={this.state.pieData}
-                                options={{ maintainAspectRatio: false }}
-                            />
-                        </div>
+                        <Card>
+                            <CardContent>
+                            <Typography>Sua Carteira</Typography>
+                            <div className="chart">
+                                <Pie
+                                    data={this.state.pieData}
+                                    options={{ maintainAspectRatio: false }}
+                                />
+                            </div>
+                            </CardContent>
+                        </Card>
+
+                       <Card style={{marginTop: '1em'}}>
+                            <CardContent>
+                                <Typography><strong>Saldo:</strong> R$ 415,21</Typography>
+                                <Typography><strong>Saldo Projetado:</strong> R$ 16.543,65</Typography>
+                                <Typography><strong>Valor Investido:</strong> R$ 321.647,67</Typography>
+                                <Typography><strong>Patrimônio Total:</strong> R$ 338.606,53</Typography>
+
+                                <div style={{display: 'flex', justifyContent: 'center', marginTop: '2em'}}>
+                                    <Button size="small" variant="contained" color="primary">Investir</Button>
+                                </div>
+                            </CardContent>
+                       </Card>
+
+                      
                     </Col>
                 </Row>
             </Container>

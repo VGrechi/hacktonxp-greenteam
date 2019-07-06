@@ -22,7 +22,7 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <BrowserRouter>
-        <div style={{ width: '100%' }}>
+        <div style={{ width: '100%', backgroundColor: blueGrey[100] }}>
           <Switch>
               <Route exact path="/" component={Home}/>
               <Route exact path="/trail/:id" component={Trail}/>

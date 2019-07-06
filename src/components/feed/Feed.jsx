@@ -5,16 +5,24 @@ import Topbar from '../topbar/Topbar';
 
 const news = [{
     id: 1,
-    title: 'Reajuste na Taxa Selic',
-    description: 'COPOM reajustará Taxa Selic no próximo mês.'
+    title: 'Dólar deve cair para R$ 3,60 com fator Previdência e exterior será decisivo para queda maior',
+    description: 'COPOM reajustará Taxa Selic no próximo mês.',
+    link: 'https://www.infomoney.com.br/mercados/cambio/noticia/8466132/dolar-deve-cair-para-r-360-com-fator-previdencia-e-exterior-sera-decisivo-para-queda-maior'
 }, {
     id: 2,
-    title: 'Titulo 2',
-    description: 'Descricao 2'
+    title: 'Banco Central aponta maior conforto com a inflação, mas vê reforma da Previdência como preponderante',
+    description: 'Presidente do Banco Central, Roberto Campos Neto participou hoje da Expert XP 2009, em São Paulo',
+    link: 'https://www.infomoney.com.br/mercados/politica/noticia/8464884/banco-central-aponta-maior-conforto-com-a-inflacao-mas-ve-reforma-da-previdencia-como-preponderante'
 }, {
     id: 3,
-    title: 'Titulo 3',
-    description: 'Descricao 3'
+    title: 'Ibovespa fecha em alta de 0,44% e volta a bater recorde',
+    description: '',
+    link: 'https://br.investing.com/news/stock-market-news/ibovespa-fecha-em-alta-de-044-e-volta-a-bater-recorde-667716'
+},{
+    id: 4,
+    title: 'O que ganha mais: fundo DI sem taxa de administração ou Tesouro Selic?',
+    description: '',
+    link: 'https://economia.uol.com.br/financas-pessoais/noticias/redacao/2019/07/04/o-que-ganha-mais-fundo-di-sem-taxa-de-administracao-ou-tesouro-selic.htm'
 }]
 
 const styles = {
@@ -31,18 +39,18 @@ export default class Feed extends Component {
 
     render() {
         return (<>
-            <Topbar title="Feed" auth></Topbar>
+            <Topbar title="Notícias" auth></Topbar>
             <Container fluid>
                 <Row>
                     {news.map(n => {
-                        return <Col lg={{ span: 3 }} md={{ span: 4 }} sm={{ span: 12 }} style={styles.card}>
+                        return <Col lg={{ offset: 2, span: 8 }} style={styles.card}>
                             <Card>
                                 <CardContent>
-                                    <Typography variant="h5" component="h2">{n.title}</Typography>
-                                    <Typography variant="body2" component="h6">{n.description}</Typography>
+                                    <Typography variant="h5">{n.title}</Typography>
+                                    <Typography>{n.description}</Typography>
                                 </CardContent>
                                 <CardActions style={styles.actions}>
-                                    <Button size="small">Leia Mais</Button>
+                                    <Button size="small" href={n.link}>Leia Mais</Button>
                                 </CardActions>
                             </Card>
                         </Col>
