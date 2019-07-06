@@ -122,6 +122,10 @@ export class Trail extends Component {
         this.props.history.push(`/trail/${trailId}/course/${courseId}`);
     }
 
+    selectQuiz = (trailId, courseId) => {
+        this.props.history.push(`/trail/${trailId}/course/${courseId}/quiz`);
+    }
+
     render(){
         const trail = this.findTrail(this.props.match.params.id);
         return (<>
@@ -143,7 +147,8 @@ export class Trail extends Component {
                                         APRENDER
                                     </Button>
                                     <Button size="small" 
-                                        onClick={() => this.selectCourse(trail.trailId, c.courseId)}>
+                                        disabled={c.progress < 100}
+                                        onClick={() => this.selectQuiz(trail.trailId, c.courseId)}>
                                         QUIZ
                                     </Button>
                                 </CardActions>

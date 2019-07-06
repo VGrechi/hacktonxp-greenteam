@@ -7,8 +7,6 @@ import Feed from '../feed/Feed';
 import Learning from '../learning/Learning';
 import Simulator from '../simulator/Simulator';
 
-import './Home.css';
-
 const styles = {
     content: {
       marginBottom: '56px'  
@@ -17,7 +15,9 @@ const styles = {
         position: 'fixed',
         bottom: 0,
         width: '100%',
-        display: 'flex'
+        display: 'flex',
+        backgroundColor: '#ddd',
+        color: 'white'
     },
     tab: {
         flewGrow: 1
@@ -47,11 +47,10 @@ export class Home extends Component {
             onChange={this.handleChange}
             showLabels
             style={styles.tabbar}>
-                <BottomNavigationAction label="Feed" style={styles.tab} />
-                <BottomNavigationAction label="Learning" style={styles.tab} />
-                <BottomNavigationAction label="Simulator" style={styles.tab} />
+                <BottomNavigationAction label="Notícias" style={styles.tab} />
+                <BottomNavigationAction label="Aprendizado" style={styles.tab} />
+                <BottomNavigationAction label="Simulado" style={styles.tab} />
             </BottomNavigation>
-            
         </>);
     }
 }

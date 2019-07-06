@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -7,7 +6,6 @@ import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import ArrowBack from '@material-ui/icons/ArrowBack';
 
 const styles = {
     navbar:{
@@ -34,17 +32,12 @@ export default class Topbar extends Component {
         this.setState({ open: false });
     }
 
-    // handleBackArrow = () => {
-    //     this.props.history.pop();
-    // }
-
     render(){
-        const { title, auth, back } = this.props;
+        const { title, auth } = this.props;
         const { open } = this.state;
         return (<>
             <AppBar position="static" style={styles.navbar}>
                 <Toolbar>
-                    {/* {back && <ArrowBack onClick={this.handleBackArrow} />} */}
                     <Typography variant="h6" style={styles.title}>
                         {title}
                     </Typography>

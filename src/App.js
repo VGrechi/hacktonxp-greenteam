@@ -9,6 +9,7 @@ import Home from './components/home/Home';
 import Trail from './components/trail/Trail';
 import Login from './components/login/Login';
 import Course from './components/course/Course';
+import Quiz from './components/quiz/Quiz';
 
 const theme = createMuiTheme({
   palette: {
@@ -25,7 +26,8 @@ function App() {
           <Switch>
               <Route exact path="/" component={Home}/>
               <Route exact path="/trail/:id" component={Trail}/>
-              <Route path="/trail/:trailId/course/:id" component={Course}/>
+              <Route exact path="/trail/:trailId/course/:id" component={Course}/>
+              <Route path="/trail/:trailId/course/:id/quiz" component={Quiz}/>
               <Route path="/login" component={Login}/>
           </Switch>
         </div>
