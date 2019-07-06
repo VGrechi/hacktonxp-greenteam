@@ -9,6 +9,17 @@ import Simulator from '../simulator/Simulator';
 
 import './Home.css';
 
+const styles = {
+    content: {
+      marginBottom: '56px'  
+    },
+    tabbar: {
+        position: 'fixed',
+        bottom: 0,
+        width: '100%'
+    }
+}
+
 export default class Home extends Component {
 
     state = { 
@@ -22,13 +33,15 @@ export default class Home extends Component {
     render(){
         const { position } = this.state;
         return (<>
+            <div style={styles.content}>
             {position === 0 && <Feed></Feed>}
             {position === 1 && <Learning></Learning>}
             {position === 2 && <Simulator></Simulator>}
+            </div>
             <BottomNavigation
             value={position}
             onChange={this.handleChange}
-            style={{ position: 'fixed', bottom: 0, width: '100%'}}
+            style={styles.tabbar}
             >
                 <BottomNavigationAction label="Feed" showLabel />
                 <BottomNavigationAction label="Learning" showLabel />
