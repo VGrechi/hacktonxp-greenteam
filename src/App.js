@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Index from './components/Index';
-import Home from './components/Home';
+import Home from './components/home/Home';
+import Login from './components/login/Login';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-          <Route exact path="/" component={Index}/>
-          <Route path="/home" component={Home}/>
+          <Route exact path="/" component={Home}/>
+          <Route path="/login" component={Login}/>
       </Switch>
     </BrowserRouter>
   );
