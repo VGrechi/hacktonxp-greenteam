@@ -61,9 +61,10 @@ const trails = [{
 
 const styles = {
     card: {
-        marginBottom: '1em',
-        minHeight: '100%',
-        height: '100%'
+        marginBottom: '1em'
+    },
+    cardTitle: {
+        textOverflow: 'ellipsis'
     },
     actions: {
         display: 'flex', 
@@ -94,7 +95,7 @@ export class Learning extends Component {
                         return <Col key={t.trailId} lg={{ span: 3 }} md={{ span: 4 }} sm={{ span: 12 }} style={styles.card}>
                             <Card>
                                 <CardContent>
-                                    <Typography variant="h5" component="h2">{t.title}</Typography>
+                                    <Typography variant="h5" component="h2" style={styles.cardTitle}>{t.title}</Typography>
                                     <LinearProgress variant="determinate"
                                         color="secondary"
                                         value={t.progress}/>
